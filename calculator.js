@@ -1,3 +1,10 @@
+const divide = function(a,b){
+    return a/b;
+}
+
+//Beyond this point functions pretested. 
+//Funtions still to create: Divide
+
 const add = function(a, b) {
 	return a + b;
 };
