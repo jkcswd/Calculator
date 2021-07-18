@@ -2,6 +2,7 @@ html {
     background-color: rgb(238, 238, 238);
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
 body  {
     height: 100%;
     width: 100%;
@@ -11,7 +12,29 @@ body  {
 }
 
 .calculator {
+    display: flex;
+    flex-direction: column;
     height: 750px;
     width: 500px;
-    background-color: black;
+    background-color: rgb(56, 56, 56);
+    border-radius: 20px;
+    box-shadow: 10px 10px 5px grey;
+    justify-content: center;
+    border: 1px black solid;
+}
+
+.display {
+    height: 100px;
+    width: 450px;
+    background-color: beige;
+    margin-top: 20px;
+    border: 1px black solid;
+    font-size: 100px;
+    text-align: end;
+}
+
+.buttons {
+    border:1px red solid; /*debug*/
+    height: 500px;
+    width: 480px;
 }
