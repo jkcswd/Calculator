@@ -36,19 +36,52 @@ body  {
 
 .buttons {
     border: 1px red solid; /*debug*/
-    height: 500px;
-    width: 480px;
+    height: 580px;
+    width: 450px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.buttons > * {
+    border: 1px red solid; /*debug*/
+}
+
+.numbers {
     display: flex;
     flex-wrap: wrap;
 }
 
-.buttons * {
-    height: 100px;
-    width: 100px;
+.operators {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.display-clear {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.buttons * *{
+    height: 80px;
+    width: 80px;
     border: 1px red solid; /*debug*/
     color: white;
-    background-color: grey;
     font-size: 50px;
     margin: 5px;
+}
 
+
+.numbers * {
+    background-color: grey;
+}
+
+.display-clear * {
+    background-color: rgb(190, 121, 121);
+    width:200px;
+    height: 50px;
+    text-align: center;
+}
+
+.operators *{
+    background-color: royalblue;
 }
