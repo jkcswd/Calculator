@@ -19,8 +19,8 @@ body  {
     background-color: rgb(56, 56, 56);
     border-radius: 20px;
     box-shadow: 10px 10px 5px grey;
-    justify-content: center;
-    border: 1px black solid;
+    align-items: center;
+    border: 5px black solid;
 }
 
 .display {
@@ -31,6 +31,7 @@ body  {
     border: 1px black solid;
     font-size: 100px;
     text-align: end;
+    margin-bottom: 20px;
 }
 
 .buttons {
@@ -46,7 +47,8 @@ body  {
     width: 100px;
     border: 1px red solid; /*debug*/
     color: white;
-    background-color:grey;
+    background-color: grey;
     font-size: 50px;
+    margin: 5px;
 
 }
