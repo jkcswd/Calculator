@@ -14,74 +14,82 @@ body  {
 .calculator {
     display: flex;
     flex-direction: column;
-    height: 750px;
+    height: 550px;
     width: 500px;
     background-color: rgb(56, 56, 56);
     border-radius: 20px;
     box-shadow: 10px 10px 5px grey;
     align-items: center;
-    border: 5px black solid;
+    border: 10px black solid;
 }
 
 .display {
     height: 100px;
-    width: 450px;
-    background-color: beige;
+    width: 425px;
+    background-color: rgb(224, 224, 224);
     margin-top: 20px;
-    border: 1px black solid;
+    border: 5px black solid;
     font-size: 100px;
     text-align: end;
-    margin-bottom: 20px;
+    
 }
 
 .buttons {
-    border: 1px red solid; /*debug*/
-    height: 580px;
+    height: 400px;
     width: 450px;
     display: flex;
     flex-direction: column-reverse;
+    justify-content: center;
 }
-.buttons > * {
-    border: 1px red solid; /*debug*/
-}
+
 
 .numbers {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .operators {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .display-clear {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
 }
 
-.buttons * *{
-    height: 80px;
-    width: 80px;
-    border: 1px red solid; /*debug*/
+.buttons * * {
     color: white;
     font-size: 50px;
     margin: 5px;
+    border: black 5px solid;
+}
+.buttons * *:hover {
+    /*figure out later why does not work */
+    opacity: 0.5;
+
 }
 
 
 .numbers * {
     background-color: grey;
+    text-align: center;
+    height:max-content;
+    width: 17%
 }
 
 .display-clear * {
     background-color: rgb(190, 121, 121);
-    width:200px;
-    height: 50px;
     text-align: center;
+    width:46%;
+    height: max-content;
 }
 
 .operators *{
     background-color: royalblue;
+    text-align: center;
+    height: max-content;
+    width: 13.8%;
 }
