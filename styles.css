@@ -3,7 +3,7 @@ html {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-body  {
+body {
     height: 100%;
     width: 100%;
     display: flex;
@@ -42,7 +42,6 @@ body  {
     justify-content: center;
 }
 
-
 .numbers {
     display: flex;
     flex-wrap: wrap;
@@ -66,10 +65,8 @@ body  {
     margin: 5px;
     border: black 5px solid;
 }
-.buttons * *:hover {
-    /*figure out later why does not work */
-    opacity: 0.5;
-
+.btn:hover {
+    opacity: 0.75 ;
 }
 
 
@@ -87,7 +84,7 @@ body  {
     height: max-content;
 }
 
-.operators *{
+.operators * {
     background-color: royalblue;
     text-align: center;
     height: max-content;
