@@ -1,3 +1,17 @@
+//populate function
+const populateDisplay = function(){
+  const display = document.querySelector('.display');
+  const numbers = document.querySelectorAll('.num');
+
+  numbers.forEach(number => number.addEventListener('click', () => {
+    display.innerHTML += number.innerHTML;
+  }));
+
+}
+
+
+
+
 //operate function
 
 const operate = function(a, b, operator){
@@ -19,7 +33,7 @@ const operate = function(a, b, operator){
 }
 
 
-//CALCULATE FUNCTIONS BEYOND HERE
+//CALCULATE FUNCTIONS
 
 const divide = function(a, b) {
     return a / b;
