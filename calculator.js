@@ -4,17 +4,16 @@ calculatorNamespace = function(){
   let secondOperand;
   let operatorSelected;
   let displayClear = 0;
+  const display = document.querySelector('.display');
 
   //clear function
   const clear = function() {
     const del = document.querySelector('.delete');
-    
   }
 
   //operator capture function
   const operatorCapture = function() {
     const operators = document.querySelectorAll('.operator');
-    const display = document.querySelector('.display');
     let count = 0;
 
     operators.forEach(operator => operator.addEventListener('click', () => {
@@ -37,7 +36,6 @@ calculatorNamespace = function(){
 
   //populate function
   const populateDisplay = function(){
-    const display = document.querySelector('.display');
     const numbers = document.querySelectorAll('.num');
 
     numbers.forEach(number => number.addEventListener('click', () => {
