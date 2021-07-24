@@ -8,7 +8,17 @@ calculatorNamespace = function(){
 
   //clear function
   const clear = function() {
-    const del = document.querySelector('.delete');
+    const clearBtn = document.querySelector('.clear');
+
+    clearBtn.addEventListener('click', () => {
+      display.innerHTML = '';
+    });
+  }
+
+  //delete function
+  const del = function() {
+    const delBtn = document.querySelector('.del');
+
   }
 
   //operator capture function
@@ -103,6 +113,7 @@ calculatorNamespace = function(){
   }
   populateDisplay();
   operatorCapture();
+  clear();
 }
 
 calculatorNamespace();
