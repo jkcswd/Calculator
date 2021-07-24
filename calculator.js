@@ -25,6 +25,16 @@ calculatorNamespace = function(){
 
   }
 
+  //factorial function causes rest not to work
+  const factorialBtn = function() {
+    const facBtn = document.querySelector('.factorial');
+  
+    facBtn.addEventListener('click', () => {
+
+      display.innerHTML = factorial(parseInt(display.innerHTML))
+    });
+  }
+
   //operator capture function
   const operatorCapture = function() {
     const operators = document.querySelectorAll('.operator');
@@ -80,7 +90,7 @@ calculatorNamespace = function(){
       case '*':
         return multiply(a, b);
       
-      case '^':
+      case '^': // does not work well.
         return power(a, b);
     }
 
@@ -124,6 +134,7 @@ calculatorNamespace = function(){
   operatorCapture();
   clear();
   del();
+  factorialBtn();
 }
 
 calculatorNamespace();
