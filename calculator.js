@@ -5,6 +5,12 @@ calculatorNamespace = function(){
   let operatorSelected;
   let displayClear = 0;
 
+  //clear function
+  const clear = function() {
+    const del = document.querySelector('.delete');
+    
+  }
+
   //operator capture function
   const operatorCapture = function() {
     const operators = document.querySelectorAll('.operator');
@@ -38,7 +44,7 @@ calculatorNamespace = function(){
       if (displayClear) {
         display.innerHTML = '';
         displayClear -= 1;
-      }
+      };
       display.innerHTML += number.innerHTML;
 
     }));
