@@ -12,7 +12,7 @@ calculatorNamespace = function(){
     let count = 0;
 
     operators.forEach(operator => operator.addEventListener('click', () => {
-      if (count % 2 === 0) {
+      if (count === 0) {
         firstOperand = display.innerHTML;
         operatorSelected = operator.innerHTML; 
         count += 1;
