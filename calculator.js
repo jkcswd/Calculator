@@ -1,27 +1,28 @@
-
-//run calculator function wrapping
-
-const runCalculator = function(){
-  populateDisplay();
-  operatorCapture();
+//Module design pattern wrapping
+calculatorNamespace = function(){
   let firstOperand;
   let secondOperand;
   let operatorSelected;
 
-
   //operator capture function
-
   const operatorCapture = function() {
     const operators = document.querySelectorAll('.operator');
     const display = document.querySelector('.display');
+    let count = 0;
 
     operators.forEach(operator => operator.addEventListener('click', () => {
-      firstOperand = display.innerHTML;
-      operatorSelected = operator.innerHTML;
-      secondOperand = ''
-
-      display.innerHTML = '';
-
+      if (count === 0) {
+        firstOperand = display.innerHTML;
+        display.innerHTML = '';
+        operatorSelected = operator.innerHTML; 
+        count += 1;
+      }else{
+        secondOperand = display.innerHTML;
+        display.innerHTML = operate(parseInt(firstOperand),parseInt(secondOperand),operatorSelected).toString();
+        operatorSelected = operator.innerHTML; 
+        firstOperand = display.innerHTML;
+        count += 1;
+      };
     }));
 
   }
@@ -89,5 +90,8 @@ const runCalculator = function(){
     return n * factorial(n-1);
     }
   }
-
+  populateDisplay();
+  operatorCapture();
 }
+
+calculatorNamespace();
