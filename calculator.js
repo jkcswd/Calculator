@@ -17,7 +17,11 @@ calculatorNamespace = function(){
 
   //delete function
   const del = function() {
-    const delBtn = document.querySelector('.del');
+    const delBtn = document.querySelector('.delete');
+
+    delBtn.addEventListener('click', () => {
+      display.innerHTML = display.innerHTML.slice(0, -1);
+    });
 
   }
 
@@ -111,9 +115,12 @@ calculatorNamespace = function(){
     return n * factorial(n-1);
     }
   }
+
+
   populateDisplay();
   operatorCapture();
   clear();
+  del();
 }
 
 calculatorNamespace();
