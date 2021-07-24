@@ -3,6 +3,7 @@ calculatorNamespace = function(){
   let firstOperand;
   let secondOperand;
   let operatorSelected;
+  let displayClear = 0;
 
   //operator capture function
   const operatorCapture = function() {
@@ -11,17 +12,18 @@ calculatorNamespace = function(){
     let count = 0;
 
     operators.forEach(operator => operator.addEventListener('click', () => {
-      if (count === 0) {
+      if (count % 2 === 0) {
         firstOperand = display.innerHTML;
-        display.innerHTML = '';
         operatorSelected = operator.innerHTML; 
         count += 1;
+        displayClear += 1;
       }else{
         secondOperand = display.innerHTML;
         display.innerHTML = operate(parseInt(firstOperand),parseInt(secondOperand),operatorSelected).toString();
         operatorSelected = operator.innerHTML; 
         firstOperand = display.innerHTML;
         count += 1;
+        displayClear += 1;
       };
     }));
 
@@ -33,7 +35,12 @@ calculatorNamespace = function(){
     const numbers = document.querySelectorAll('.num');
 
     numbers.forEach(number => number.addEventListener('click', () => {
+      if (displayClear) {
+        display.innerHTML = '';
+        displayClear -= 1;
+      }
       display.innerHTML += number.innerHTML;
+
     }));
 
   }
