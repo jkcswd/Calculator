@@ -79,6 +79,9 @@ calculatorNamespace = function(){
       
       case '*':
         return multiply(a, b);
+      
+      case '^':
+        return power(a, b);
     }
 
   }
