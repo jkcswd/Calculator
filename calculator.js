@@ -1,5 +1,3 @@
-// fix ! button so that it operates the current operands before caluating?
-
 //Module design pattern wrapping
 calculatorNamespace = function(){
   let firstOperand;
@@ -51,6 +49,8 @@ calculatorNamespace = function(){
     const facBtn = document.querySelector('.factorial');
   
     facBtn.addEventListener('click', () => {
+      secondOperand = display.innerHTML;
+      display.innerHTML = operate(parseInt(firstOperand),parseInt(secondOperand),operatorSelected).toString();
       display.innerHTML = factorial(parseInt(display.innerHTML))
     });
   }
