@@ -1,3 +1,5 @@
+// fix ! button so that it operates the current operands before caluating?
+
 //Module design pattern wrapping
 calculatorNamespace = function(){
   let firstOperand;
@@ -5,6 +7,21 @@ calculatorNamespace = function(){
   let operatorSelected;
   let displayClear = 0;
   const display = document.querySelector('.display');
+  let count = 0;
+
+  //answer function
+  const answer = function() {
+    const answerBtn = document.querySelector('.answer');
+
+    answerBtn.addEventListener('click', () => {
+      secondOperand = display.innerHTML;
+      display.innerHTML = operate(parseInt(firstOperand),parseInt(secondOperand),operatorSelected).toString();
+      secondOperand = '';
+      count = 0;
+      
+    });
+  }
+
 
   //clear function
   const clear = function() {
@@ -12,6 +29,10 @@ calculatorNamespace = function(){
 
     clearBtn.addEventListener('click', () => {
       display.innerHTML = '';
+      firstOperand = '';
+      secondOperand = '';
+      operatorSelected = '';
+      count = 0;
     });
   }
 
@@ -25,12 +46,11 @@ calculatorNamespace = function(){
 
   }
 
-  //factorial function causes rest not to work
+  //factorial function
   const factorialBtn = function() {
     const facBtn = document.querySelector('.factorial');
   
     facBtn.addEventListener('click', () => {
-
       display.innerHTML = factorial(parseInt(display.innerHTML))
     });
   }
@@ -38,7 +58,6 @@ calculatorNamespace = function(){
   //operator capture function
   const operatorCapture = function() {
     const operators = document.querySelectorAll('.operator');
-    let count = 0;
 
     operators.forEach(operator => operator.addEventListener('click', () => {
       if (count === 0) {
@@ -90,7 +109,7 @@ calculatorNamespace = function(){
       case '*':
         return multiply(a, b);
       
-      case '^': // does not work well.
+      case '^': 
         return power(a, b);
     }
 
@@ -135,6 +154,7 @@ calculatorNamespace = function(){
   clear();
   del();
   factorialBtn();
+  answer();
 }
 
 calculatorNamespace();
