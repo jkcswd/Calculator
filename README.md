@@ -8,4 +8,4 @@ A simple calculator app that works by clicking on the buttons.
 
 ## How to use
 
-Access from this link 
+Access from this link https://jkcswd.github.io/Calculator/
