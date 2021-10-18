@@ -1,4 +1,3 @@
-//Module design pattern wrapping
 calculatorNamespace = function(){
   let firstOperand;
   let secondOperand;
